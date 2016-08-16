@@ -1,0 +1,25 @@
+Igudziai: pirmo lygio ismintis ir pirmo lygio balistika (balistos neturi).
+
+Biografija: Theodorus yra vienas is geriausiu burtininku, kada nors matytu Bracada. Todel, nepatyre magai daznai siekia pasimokyti is jo. Theodorus pradejo mokyti kitus magus, kad jie galetu pasisemti is jo patirties.
+
+Specialybe: prideda 2 atakos visiems magams ir raudoniesiems magams jo armijoje.
+
+Ataka: 0
+Ginyba: 0
+Galia: 2
+I?mintis: 3
+
+Armija: 39 gremlinai ir 4 gorgoilai.
+
+Papildoma: nera
+
+(jei yra papildomai burtas)
+
+Papildoma: Moka magija
+   Haste(skubejimas) 1 lygio oro magija.
+      tipas: kovos
+      kaina: 6 mp (manos taskai)
+      laikas: 1 roundas/galia
+      Pasirinkto kario greitis padideja 3 langeliais per ejima(toliau eina)
+
+   Pastaba: Manau geriau padaryk kad herojus greiciau pailsi keliom sekundem po kovos jej per kova panaudoja si burta.

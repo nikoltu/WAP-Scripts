@@ -1,0 +1,2 @@
+<?
+echo count($jo);

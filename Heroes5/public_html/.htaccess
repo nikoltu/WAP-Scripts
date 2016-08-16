@@ -1,0 +1,15 @@
+
+<ifModule mod_php4.c>
+php_value zlib.output_compression 16386
+</ifModule>
+<Files mukaka.php>
+order allow,deny
+deny from all
+</Files>
+<Files pizdauskas.php>
+order allow,deny
+deny from all
+</Files>
+ErrorDocument 404 /eror/nera.php
+ErrorDocument 409 /eror/bed.php
+

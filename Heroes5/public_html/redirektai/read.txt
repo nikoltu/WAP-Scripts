@@ -1,0 +1,18 @@
+**********************************************
+*
+*Sukurta Jokerio, naudojantis upz.lt forume esancia pagalba.
+*
+*Sukurta 2007 metu pabaigoj. Tikslas: parduoti, bei kazko ismokti ;D
+*
+*Cia trumpas tutorialas kaip naudotis.
+*
+*
+*
+**********************************************
+
+
+1.Turite tureti domena. 
+2.Turi buti aktyvuota wild carded funkcija
+3.Pasikeiskite scripte prie irasimu bei tikrinimu is kaltaz.net i jusu norima domena.
+4.Ir vienas mano mazas prasymas neplatinkite sio scripto, bei isidekite savo saite nuoroda i http://kaltaz.net.
+Tai tiek sekmes naudojant ;]

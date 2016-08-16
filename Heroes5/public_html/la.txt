@@ -1,0 +1,151 @@
+<?php
+$lav=mysql_fetch_array(mysql_query("SELECT * FROM laivynas where user='$user[username]'"));
+$sh=$_GET['la'];
+if($sh==""){
+if(!$lav[loc]){
+echo"<small>Jus neturite laivo!</small><br/>";}
+echo"<small><a href=\"index.php?id=$id&amp;action=laiv&amp;la=shop\">Kapitonas Ronas</a></small><br/>";
+echo"<small><a href=\"index.php?id=$id&amp;action=laiv&amp;la=vand\">Vandenynas</a></small><br/>";
+echo"$line<br/><small><a href=\"index.php?id=$id\">$home</a></small>";}
+if($sh=="shop"){
+echo"<small>Sveikas nepazystamasis! Ko noretum?</small><br/>$line<br/>";
+echo"<small><a href=\"index.php?id=$id&amp;action=laiv&amp;la=info\">Informacija</a></small><br/>";
+echo"<small><a href=\"index.php?id=$id&amp;action=laiv&amp;la=buy\">Pirkti laiv&#261;</a></small><br/>";
+echo"$line<br/><small><a href=\"index.php?id=$id\">$home</a></small>";}
+if($sh=="buy"){
+echo"<small><b>Valtis</b></small><br/>";
+echo"<small>Greitis:<b>5</b> per diena</small><br/>";
+echo"<small>Telpa aukso:<b>10000</b></small><br/>";
+echo"<small>Telpa patirties:<b>10000</b></small><br/>";
+echo"<small>Telpa artifakt&#371;:<b>1</b></small><br/>";
+echo"<small>Telpa po:<b>5</b> vis&#371; resurs&#371;</small><br/>";
+echo"<small>Kaina:<b>10000</b> aukso ir <b>5</b> gemsai</small><br/>";
+echo"<small><a href=\"index.php?id=$id&amp;action=laiv&amp;la=buy2&amp;ship=valtis\">Pirkti</a></small>";
+echo"<br/>$line<br/><small><a href=\"index.php?id=$id\">$home</a></small>";}
+if($sh=="buy2"){
+$ship=$_GET['ship'];
+$shi=@include_once("ships/$ship.php");
+if(!$shi){
+echo"<small>Tokio laivo n&#279;ra</small></p></card></wml>";
+exit;
+mysql_close($db);}
+if($lav[name]){
+echo"<small>Laiva jau turite</small></p></card></wml>";
+exit;
+mysql_close($db);}
+
+if(($cost[mercury]>0) and ($cost[mercury]>$user[mercury]) or ($cost[gem]>0) and ($cost[gem]>$user[gem]) or ($cost[sulfur]>0) and ($cost[sulfur]>$user[sulfur]) or ($cost[crystal]>0) and ($cost[crystal]>$user[crystal]) or ($cost[gold]>$user[gold])){
+echo"<small>Nepakanka resursu!</small></p></card></wml>";
+exit;
+mysql_close($db);}
+mysql_query("UPDATE users SET gold=gold-$cost[gold],gem=gem-$cost[gem],crystal=crystal-$cost[crystal],sulfur=sulfur-$cost[sulfur],mercury=mercury-$cost[mercury] where username='$user[username]'");
+mysql_query("insert into laivynas (user,name,ejimas) values ('$user[username]','$ship','$speed')");
+mysql_query("insert into jura (name,type,loc) values ('$user[username]','game','a1')");
+echo"<small>Nusipirkote $ship</small><br/>$line<br/><small><a href=\"index.php?id=$id\">$home</a></small>";}
+
+
+
+if($sh=="info"){
+echo"<small>Informacija apie vandenyna</small><br/>$line<br/>";
+echo"<small>Pralaim&#279;ja kova vandenyne ils&#279;sit&#279;s 1valanda o laim&#279;jus 20min.!</small><br/>$line<br/>";
+echo"<small>Nor&#279;dami atsiimti rasta laimiki turite sugrizti i uosta</small><br/>$line<br/>";
+echo"<small>Cia netaip kaip sausumoje. Ne jus puolate monstrus o jie jus. Tad jeigu baiminat&#279;s d&#279;l savo armijos geriau plaukiokite netoli uosto be armijos</small><br/>$line<br/>";
+echo"<small>* Reiskia, kad tame kelyje yra kitas laivas ar monstrai</small><br/>$line<br/>";
+echo"<small>Vandenynas visiems bendras. Tai rei&#353;kia, kad jai jus ka nors paimsite tai kitas &#382;aid&#279;jas to daikto toje vietoje neras.</small><br/>$line<br/>";
+echo"<small><a href=\"index.php?id=$id\">$home</a></small>";}
+
+if($sh=="vand"){
+if(!$lav[user]){
+echo"<small>Jus neturite laivo!</small></p></card></wml>";
+exit;
+mysql_close($db);
+}
+$loc=$_POST['loc'];
+if(!$loc){
+$loc=$lav[loc];}
+$ita=$_GET['ia'];
+$nr=$_POST['nr'];
+include_once("include/loc.php");
+if($ita){
+$dai=mysql_fetch_array(mysql_query("SELECT * FROM jura where id='$ita'"));
+if($dai[name]){
+include_once("ships/$lav[name].php");
+if($lav[$dai[name]]>=$oth[$dai[name]]){
+echo"<small>Laivas pilnas</small><br/>";}
+else {
+if($dai[type]=="res"){
+include_once("core/resources.php");
+$res=resource($dai[name], $dai[kiek]);}
+$zaid=mysql_query("SELECT name FROM jura where loc='$lav[loc]' and type='game' and name!='$user[username]'");
+while($ro=mysql_fetch_array($zaid)){
+$nn=$ro['name'];
+mysql_query("insert into journal (user,text) values ('$nn','<b>$user[username]</b> paeme <b>$dai[kiek] $res</b>')");
+}
+mysql_query("UPDATE laivynas SET $dai[name]=$dai[name]+$dai[kiek] where user='$user[username]'");
+mysql_query("DELETE FROM jura where id='$ita'");
+echo"<small>Paimete $dai[kiek] $res</small><br/>";}}
+}
+if($loc!=="$lav[loc]"){
+if($lav[ejimas]<1){
+echo"<small>Nepakanka &#279;jim&#371;</small></p></card></wml>";
+exit;
+mysql_close($db);}
+
+$loc4=$loc;
+$loc=$lav[loc];
+$loc2=explode("|",$lok[$nr]);
+$loc=$loc4;
+$zaid=mysql_query("SELECT name FROM jura where loc='$lav[loc]' and type='game' and name!='$user[username]'");
+while($ro=mysql_fetch_array($zaid)){
+$nn=$ro['name'];
+mysql_query("insert into journal (user,text) values ('$nn','<b>$user[username]</b> nuplauk&#279; keliu: <b>$loc2[1]</b><br/>')");
+}
+$zaid2=mysql_query("SELECT name FROM jura where loc='$loc' and type='game' and name!='$user[username]'");
+while($ro2=mysql_fetch_array($zaid2)){
+$nn2=$ro2['name'];
+mysql_query("insert into journal (user,text) values ('$nn2','Atplauk&#279; <b>$user[username]</b><br/>')");}
+}
+$txt=mysql_query("SELECT text FROM journal where user='$user[username]' order by id");
+while($text=mysql_fetch_array($txt)){
+$tx=$text['text'];
+if($tx!==""){
+
+echo"<small>$tx</small><br/>";
+}}
+mysql_query("DELETE FROM journal where user='$user[username]'");
+$us=mysql_fetch_array(mysql_query("SELECT * FROM jura where name='$user[username]'"));
+if(!$us[name]){
+mysql_query("insert into jura (name,type,loc) values ('$user[username]','game','$loc')");}
+mysql_query("UPDATE jura SET loc='$loc' where name='$user[username]'");
+mysql_query("UPDATE laivynas SET loc='$loc',ejimas=ejimas-1 where user='$user[username]'");
+$itm=mysql_query("SELECT * FROM jura where loc='$loc'");
+while($item=mysql_fetch_array($itm)){
+$name=$item['name'];
+$kiek=$item['kiek'];
+$type=$item['type'];
+$ia=$item['id'];
+if($type=="gold"){
+$re="Aukso";}
+if($type=="exp"){
+$re="Patirties";}
+if($type=="res"){
+include_once("core/resources.php");
+$re=resource($name, $kiek);}
+if(($type=="game") and (strtolower($user[username])!==strtolower($name))){
+echo"<small><a href=\"index.php?id=$id&amp;action=nick_info&amp;name=$name\">$name</a></small><br/>";}
+if($type=="res"){
+echo"<small><a href=\"index.php?id=$id&amp;action=laiv&amp;la=vand&amp;ia=$ia\">$kiek $re</a></small><br/>";}
+}
+echo"$line<br/>";
+for($l=0; $l<count($lok); $l++){
+$loka=explode("|",$lok[$l]);
+$mob=mysql_fetch_array(mysql_query("SELECT * FROM jura where loc='$loka[0]' and type='mob'"));
+$moba=mysql_fetch_array(mysql_query("SELECT * FROM jura where loc='$loka[0]' and type='game'"));
+echo"<small><anchor>$loka[1]<go method=\"post\" href=\"index.php?id=$id&amp;action=laiv&amp;la=vand\"><postfield name=\"loc\" value=\"$loka[0]\"/><postfield name=\"nr\" value=\"$l\"/></go></anchor>";
+if(($mob[name]) or ($moba[name])){
+echo"&nbsp;*";}
+echo"</small><br/>";}
+echo"$line<br/><small><a href=\"index.php?id=$id\">$home</a></small>";}
+
+
+?>

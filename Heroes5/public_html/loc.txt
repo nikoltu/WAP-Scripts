@@ -1,0 +1,171 @@
+<?
+/*
+a1 a2 ir t.t. Yra lokaciju kodai. Uzrasas po | zenklu yra lokacijos antraste kuria mato plaukiotojai.
+a1 yra uostas(butinai). Kaip matai a2 yra lokacija plaukti i wandenyna. O joje yra a1 grizt i uosta taigi lokacijoj darant gryzima ten iskur i ja atplaukei reik rasyt ne betkoki koda.
+Gali pradet daryt is naujo. Kodai nebutinai turi but a1,a2 ir pan daryk betkokius tik butinai turi but wisi a iki 20 nes jei nebus tie kas jose yra negales judet.
+Galima daryt ir i siaure ar pietus ar pwz apiplaukti sala is pietu.
+Jai dar kas neaisku rasyk.
+
+     a14 a4 a5 a3
+     a13 a6 a7 a8
+     a12 a11 a9 a10
+     a16 a17 a18 a19
+
+
+
+pagal sita pawizdi is a8 ir a9 yra plaukimas i a10 tik is a8 bus pietus is a9 rytai bet plaukimas i ta pacia wieta. O is a10 turi but keliai i a8(siaure) ir a9(wakarai) na ir gali but a11(pietus). Tikiuosi pwz supratai
+
+
+*/
+
+
+if($loc=="a1"){
+$lok[0]="a2|Plaukti i vandenyna";}
+if($loca=="a1"){
+$lokg[0]="a2|Plaukti i vandenyna";}
+
+
+if($loc=="a2"){
+$lok[0]="a1|I uosta";
+$lok[1]="a3|I rytus";
+$lok[2]="a11|I vakarus";}
+if($loca=="a2"){
+$lokg[0]="a1|I uosta";
+$lokg[1]="a3|I rytus";
+$lokg[2]="a11|I vakarus";}
+
+if($loc=="a11"){
+$lok[0]="a12|I vakarus";
+$lok[1]="a2|I rytus";}
+
+if($loca=="a11"){
+$loka[0]="a12|I vakarus";
+$loka[1]="a2|I rytus";}
+
+
+if($loc=="a12"){
+$lok[0]="a13|I vakarus";
+$lok[1]="a11|I rytus";}
+if($loca=="a12"){
+$lokg[0]="a13|I vakarus";
+$lokg[1]="a11|I rytus";}
+
+if($loc=="a13"){
+$lok[0]="a14|I vakarus";
+$lok[1]="a12|I rytus";}
+if($loca=="a13"){
+$lokg[0]="a14|I vakarus";
+$lokg[1]="a12|I rytus";}
+
+if($loc=="a14"){
+$lok[0]="a15|I vakarus";
+$lok[1]="a13|I rytus";}
+if($loca=="a14"){
+$lokg[0]="a15|I vakarus";
+$lokg[1]="a13|I rytus";}
+
+if($loc=="a15"){
+$lok[0]="a16|I vakarus";
+$lok[1]="a14|I rytus";}
+if($loca=="a15"){
+$lokg[0]="a16|I vakarus";
+$lokg[1]="a14|I rytus";}
+
+if($loc=="a16"){
+$lok[0]="a17|I vakarus";
+$lok[1]="a15|I rytus";}
+if($loca=="a16"){
+$lokg[0]="a17|I vakarus";
+$lokg[1]="a15|I rytus";}
+
+if($loc=="a17"){
+$lok[0]="a18|I vakarus";
+$lok[1]="a16|I rytus";}
+if($loca=="a17"){
+$lokg[0]="a18|I vakarus";
+$lokg[1]="a16|I rytus";}
+
+if($loc=="a18"){
+$lok[0]="a19|I vakarus";
+$lok[1]="a17|I rytus";}
+if($loca=="a18"){
+$lokg[0]="a19|I vakarus";
+$lokg[1]="a17|I rytus";}
+
+if($loc=="a19"){
+$lok[0]="a20|I vakarus";
+$lok[1]="a18|I rytus";}
+
+if($loca=="a19"){
+$lokg[0]="a20|I vakarus";
+$lokg[1]="a18|I rytus";}
+
+if($loc=="a20"){
+$lok[0]="a19|I rytus";}
+
+if($loca=="a20"){
+$lokg[0]="a19|I rytus";}
+
+
+
+if($loc=="a3"){
+$lok[0]="a2|I vakarus";
+$lok[1]="a4|I rytus";}
+
+if($loca=="a3"){
+$lokg[0]="a2|I vakarus";
+$lokg[1]="a4|I rytus";}
+
+if($loc=="a4"){
+$lok[0]="a3|I vakarus";
+$lok[1]="a5|I rytus";}
+
+if($loca=="a4"){
+$lokg[0]="a3|I vakarus";
+$lokg[1]="a5|I rytus";}
+
+if($loc=="a5"){
+$lok[0]="a4|I vakarus";
+$lok[1]="a6|I rytus";}
+
+if($loca=="a5"){
+$lokg[0]="a4|I vakarus";
+$lokg[1]="a6|I rytus";}
+
+if($loc=="a6"){
+$lok[0]="a5|I vakarus";
+$lok[1]="a7|I rytus";}
+if($loca=="a6"){
+$lokg[0]="a5|I vakarus";
+$lokg[1]="a7|I rytus";}
+
+
+if($loc=="a7"){
+$lok[0]="a6|I vakarus";
+$lok[1]="a8|I rytus";}
+if($loca=="a7"){
+$lokg[0]="a6|I vakarus";
+$lokg[1]="a8|I rytus";}
+
+if($loc=="a8"){
+$lok[0]="a7|I vakarus";
+$lok[1]="a9|I rytus";}
+if($loca=="a8"){
+$lokg[0]="a7|I vakarus";
+$lokg[1]="a9|I rytus";}
+
+if($loc=="a9"){
+$lok[0]="a8|I vakarus";
+$lok[1]="a10|I rytus";}
+if($loca=="a9"){
+$lokg[0]="a8|I vakarus";
+$lokg[1]="a10|I rytus";}
+
+if($loc=="a10"){
+$lok[0]="a9|I vakarus";}
+if($loca=="a10"){
+$lokg[0]="a9|I vakarus";}
+
+
+
+?>

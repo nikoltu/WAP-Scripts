@@ -1,0 +1,3 @@
+<? $fp5g55 = fopen("darinfos/$nick.ly", "w");
+fwrite($fp5g55,"$dari[0]|$dari[1]|$dari[2]|$dari[3]|$dari[4]|$dari[5]|$dari[6]|$dari[7]|$dari[8]|$dari[9]|$dari[10]|$dari[11]|$dari[12]|$dari[13]|$dari[14]|$dari[15]|$dari[16]|$dari[17]|$dari[18]|$dari[19]|$dari[20]|$dari[21]|$dari[22]|$dari[23]|$dari[24]|$dari[25]|$dari[26]|$dari[27]|$dari[28]|$dari[29]|$dari[30]|$dari[31]|$dari[32]|$dari[33]|$dari[34]|$dari[35]|$dari[36]|$dari[37]|$dari[38]|$dari[39]|$dari[40]|$dari[41]|$dari[42]|$dari[43]|$dari[44]|$dari[45]|$dari[46]|$dari[47]|$dari[48]|$dari[49]|$dari[50]|$dari[51]|$dari[52]|$dari[53]|$dari[54]|$dari[55]|$dari[56]|$dari[57]|$dari[58]|$dari[59]|$dari[60]|$dari[61]|$dari[62]|$dari[63]|$dari[64]|$dari[65]|$dari[66]|$dari[67]|$dari[68]|$dari[69]|");
+fclose($fp5g55); ?>

@@ -1,0 +1,29 @@
+<?
+$skill_name[necromanc]="Nekromantija";
+$skill_name[balistic]="Balistika";
+$skill_name[learning]="Studijavimas";
+$skill_name[sorcery]="Stebuklingumas";
+$skill_name[scholar]="Mokslo &#382;mogus";
+$skill_name[strategy]="Strategija";
+$skill_name[kelp]="Kelio paie&#353;ka";
+$skill_name[diplo]="Diplomatija";
+$skill_name[earth_magic]="&#382;em&#279;s magija";
+$skill_name[mistic]="Mistika";
+$skill_name[navigace]="Navigacija";
+$skill_name[see]="Reg&#279;jimas";
+$skill_name[zval]="&#382;valgyba";
+$skill_name[intelekt]="Intelektas";
+$skill_name[tactik]="S&#279;km&#279;";
+$skill_name[water_magic]="Vandens magija";
+$skill_name[fire_magic]="Ugnies magija";
+$skill_name[air_magic]="Oro magija";
+$skill_name[knowledge]="Ismintis";
+$skill_name[healing]="Gydimas";
+$skill_name[luck]="Taktika";
+$skill_name[resistance]="Rezistencija";
+$skill_name[estates]="Pinigai";
+$skill_name[archery]="&#353;audimas";
+$skill_name[leadership] = "Vadovavimas";
+$skill_name[offense] = "Puolimas";
+$skill_name[armorer] = "Apsauga";
+?>

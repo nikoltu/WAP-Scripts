@@ -1,0 +1,25 @@
+     w4 a4 a5 a3 b4 b5
+     w3 a6 a7 a8 b6 b7
+     g2 g3 a9 g4 b8 b9
+     g6 g7 g8 d2 c4 c2
+
+if($loc=="g3"){
+$lok[0]="a6|I siaure";
+$lok[1]="a9|I rytus";
+$lok[2]="g2|I vakarus";
+$lok[2]="g7|I pietus";}
+if($loca=="g3"){
+$lokg[0]="a6|I siaure";
+$lokg[1]="a9|I rytus";
+$lokg[2]="g2|I vakarus";
+$lokg[2]="g7|I pietus";}
+if($loc=="a6"){
+$lok[0]="a1|I siaure";
+$lok[1]="a7|I rytus";
+$lok[2]="w3|I vakarus";
+$lok[2]="g3|I pietus";}
+if($loca=="a6"){
+$lokg[0]="a1|I siaure";
+$lokg[1]="a7|I rytus";
+$lokg[2]="w3|I vakarus";
+$lokg[2]="g3|I pietus";}

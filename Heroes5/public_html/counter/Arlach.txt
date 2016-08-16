@@ -1,0 +1,14 @@
+Agud¨iai: 1 lwl puolimas ir basic artillery
+
+Biografija: Arlach yra vienas is keliu trogloditu, kuriais Nighon pasitiki ir leidzia vadovauti jo armijoms. Arlach rodo nepaprasta igudi su balista, ir jo daznai pareikalauja, kad nuniokot¦ prieªo pajegas.
+
+Specialybe: prideda atakos ir ginybos balistai.
+
+Ataka: 2
+Ginyba: 2
+Galia: 1
+Iªmintis: 1
+
+Armija: 35 tragloditai.
+
+Turi balista

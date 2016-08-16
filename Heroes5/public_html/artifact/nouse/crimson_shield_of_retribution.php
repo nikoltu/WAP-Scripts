@@ -1,0 +1,3 @@
+<?
+$btype="left_hand";
+?>

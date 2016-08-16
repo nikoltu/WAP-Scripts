@@ -1,0 +1,3 @@
+<? $fp5g5 = fopen("kitaaainf/$nick.ly", "w");
+fwrite($fp5g5,"$kit[0]|$kit[1]|$kit[2]|$kit[3]|$kit[4]|$kit[5]|$kit[6]|$kit[7]|$kit[8]|$kit[9]|$kit[10]|$kit[11]|$kit[12]|$kit[13]|$kit[14]|$kit[15]|$kit[16]|$kit[17]|$kit[18]|$kit[19]|$kit[20]|$kit[21]|$kit[22]|$kit[23]|$kit[24]|$kit[25]|$kit[26]|$kit[27]|$kit[28]|$kit[29]|$kit[30]|$kit[31]|$kit[32]|$kit[33]|$kit[34]|$kit[35]|$kit[36]|$kit[37]|$kit[38]|$kit[39]|$kit[40]|$kit[41]|$kit[42]|$kit[43]|$kit[44]|$kit[45]|$kit[46]|$kit[47]|$kit[48]|$kit[49]|$kit[50]|$kit[51]|$kit[52]|$kit[53]|$kit[54]|$kit[55]|$kit[56]|$kit[57]|$kit[58]|$kit[59]|$kit[60]|$kit[61]|$kit[62]|$kit[63]|$kit[64]|$kit[65]|$kit[66]|");
+fclose($fp5g5); ?>
